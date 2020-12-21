@@ -140,9 +140,7 @@ class SecondaryCapsuleLayer(torch.nn.Module):
             v_j = SecondaryCapsuleLayer.squash(s_j)
             v_j1 = torch.cat([v_j] * self.in_channels, dim=1)
             u_vj1 = torch.matmul(u_hat.transpose(3, 4), v_j1).squeeze(4).mean(dim=0, keepdim=True)
-			b_ij = b_ij + u_vj1
-            # b_max = torch.max(b_ij, dim = 2, keepdim = True)
-            # b_ij = b_ij / b_max.values ## values can be zero so loss would be nan
+            b_ij = b_ij + u_vj1
         return v_j.squeeze(1)
 
 class Attention(torch.nn.Module):

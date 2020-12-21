@@ -9,12 +9,12 @@ def parameter_parser():
 	
     parser.add_argument("--train-graph-folder",
                         nargs="?",
-                        default="./input/train/",
+                        default="../input/train/",
 	                help="Training graphs folder.")
 
     parser.add_argument("--test-graph-folder",
                         nargs="?",
-                        default="./input/test/",
+                        default="../input/test/",
 	                help="Testing graphs folder.")
 
     parser.add_argument("--prediction-path",
